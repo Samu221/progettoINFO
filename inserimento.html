@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuovo Progetto</title>
+</head>
+<body>
+  <div id="progettoForm">
+    <h2>Nuovo Progetto</h2>
+    <form action="inserimento.php" method="post">
+        <legend>titolo:</legend>
+        <input type="text" id="titolo" name="titolo" placeholder="Inserisci il titolo del tuo progetto" required>
+        <legend>ambito:</legend>
+        <select type="text" id="ambito" name="ambito" required>
+        <option selected="selected">Informatica </option>
+        <option>Meccanica </option>
+        <option>Robotica </option>
+        </select>
+        <legend>descrizione:</legend>
+        <input type="text" id="descrizione" name="descrizione" placeholder="Inserisci una breve descrizone (300 caratteri)" required>
+        <legend>procedimento:</legend>
+        <input type="text" id="procedimento" name="procedimento" placeholder="Inserisci il procedimento che hai svolto" required>
+        <input type="submit" value="Accedi">
+    </form>
+  </div>
+ 
+</body>
+</html>

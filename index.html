@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="registrazione.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accedi</title>
+</head>
+<body>
+  <br>
+  <h1>diy</h1>
+  <br>
+  <div class="form-container" id="loginForm">
+    <h2>Accesso</h2>
+    <form action="login.php" method="post">
+      <p>Username:</p>
+      <input type="text" id="user" name="userlogin" placeholder="Enter username" required>
+      <p>Password:</p>
+      <input type="password" id="pass" name="passlogin" placeholder="Enter password" required>
+      <input type="submit" value="Accedi">
+    </form>
+    <p class="switch-form">Non hai un account? <a href="#" onclick="showRegistrationForm()">Registrati</a></p>
+  </div>
+
+  <div class="form-container" id="registrationForm">
+    <h2>Registrazione</h2>
+    <form action="registrazione.php" method="post">
+      <p>Email:</p>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <p>Username:</p>
+      <input type="text" id="user" name="user" placeholder="Enter username" required>
+      <p>Password:</p>
+      <input type="password" id="pass" name="pass" placeholder="Enter password" required>
+      <input type="submit" value="Registrati">
+    </form>
+    <p class="switch-form">Hai già un account? <a href="#" onclick="showLoginForm()">Accedi</a></p>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+  
+  
+</body>
+</html>
