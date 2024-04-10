@@ -1,49 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="progetto.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+</head>
+<body>
+    <header style="top: 0; width: 100%; border-bottom: 1px solid black;">
+        <h1>Progetto</h1>
+        <a href="account.php" class="account-link">
+            <img src="immagini/account.png" alt="Icona Account" style="width: 40px;">
+        </a>
+        <a href="/percorso-del-tuo-account" class="salvati-link">
+            <img src="immagini/salvati.png" alt="Icona Salvati" style="width: 35px;">
+        </a>
+        <a href="inserimento.html" class="aggiungi-link">
+            <img src="immagini/aggiungi.png" alt="Icona Aggiungi" style="width: 34px;">
+        </a>
+    </header>
 <?php
 // Connect to the database
 $conn = new mysqli("localhost", "root", "", "progettoinfo");
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-// Prepare and execute the SQL query
-$sql = "SELECT titolo, immagine, descrizione FROM progetto INNER JOIN immagine ON progetto.codice = immagine.codice_progetto WHERE progetto.codice = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $project_code);
-$stmt->execute();
-$result = $stmt->get_result();
+if (isset($_GET['codice'])) {
+    $project_code=$_GET["codice"];
+}
 
-// Initialize an array to store the project details
-$project_details = [];
+$sql = "SELECT CODICE, titolo, ambito, descrizione, num_like, username_creatore, procedimento
+FROM progetto 
+WHERE progetto.codice = $project_code";
 
-// Fetch the result and store the project details in the array
-while ($row = $result->fetch_assoc()) {
-    $project_details[] = $row;
+$sql_img = "SELECT immagine.immagine
+FROM progetto, immagine
+WHERE progetto.codice = immagine.codice_progetto AND immagine.codice_progetto=$project_code";
+
+$result = mysqli_query($conn, $sql);
+$result_img = mysqli_query($conn, $sql_img);
+
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<h2 class='titolo'>" . $row["titolo"] . "</h2>";
+        echo "<div class='project_container'>";
+        echo "  <div class='container info'>";
+        echo "      <div class='container ambito'>";
+        echo "          <p>Creato da: " . $row["username_creatore"] . "</p>";
+        echo "          <p>Ambito: " . $row["ambito"] . "</p>";
+        echo "      </div>";
+        echo "      <div class='container likes'>";
+        echo "          <img class='like-icon' src='heart_gray.png' onclick='like(this)' alt='Like'>";
+        echo "          <span class='like-count'>" . $row["num_like"] . "</span>";
+        echo "      </div>";
+        echo "      <div class='container descrizione'>";
+        echo "          <p>Descrizione: " . $row["descrizione"] . "</p>";
+        echo "      </div>";
+        echo "      <div class='container procedimento'>";
+        echo "          <p>Procedimento: " . $row["procedimento"] . "</p>";
+        echo "      </div>";
+        echo "  </div>";
+        echo "</div>";
+    }
+}
+else{
+    echo "progetto non trovato";
+}
+
+if (mysqli_num_rows($result_img) > 0) {
+    while($row = mysqli_fetch_assoc($result_img)) {
+        echo "<img class='immagine' src='data:image/jpeg;base64," . base64_encode($row["immagine"]) . "' alt='Immagine del progetto'>";
+
+    }
+}
+else{
+    echo "immagini non trovate";
 }
 
 // Close the database connection
-$stmt->close();
-$conn->close();
+mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Project Details</title>
-</head>
-<body>
-
-<?php
-// Display the project details and images
-if (!empty($project_details)) {
-    echo "<h1>" . htmlspecialchars($project_details[0]["titolo"]) . "</h1>";
-    echo "<p>" . htmlspecialchars($project_details[0]["descrizione"]) . "</p>";
-    echo "<img src='data:image/jpeg;base64," . base64_encode($project_details[0]["immagine"]) . "' alt='Project Image' style='max-width:100%;height:auto;'/>";
-} else {
-    echo "No project found with the provided code.";
-}
-?>
 
 </body>
 </html>

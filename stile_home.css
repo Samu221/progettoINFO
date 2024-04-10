@@ -1,0 +1,89 @@
+/* Stile generale */
+
+.project_container {
+    padding: 1.5rem; /* Maggiore spazio intorno al contenitore */
+    border: 1px solid #333; /* Bordo sottile scuro */
+    min-height: 300px;
+    overflow: hidden; /* Gestione del float */
+    background-color: #f9f9f9; /* Sfondo leggermente grigio */
+    border-radius: 8px; /* Bordo arrotondato */
+}
+
+.container {
+    box-sizing: border-box;
+}
+
+/* Stile delle informazioni */
+.info {
+    margin-top: 1.5rem; /* Margine sopra le informazioni */
+}
+
+/* Stile dell'immagine */
+.img {
+    padding-right: 1.5rem; /* Maggiore spazio tra l'immagine e il contenuto adiacente */
+    height: 300px;
+    float: left;
+}
+/* Stile del titolo */
+.titolo {
+    text-align: center;
+    font-size: 1.5rem; /* Dimensione del testo del titolo */
+    margin-bottom: 1rem; /* Margine inferiore */
+}
+
+/* Stile dell'immagine all'interno dell'elemento .img */
+.immagine {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    border-radius: 8px; /* Bordo arrotondato per l'immagine */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Stile dell'ambito */
+.ambito {
+    float: left;
+    height: 80px;
+}
+
+/* Stile dei like */
+.like {
+    align-items: right;
+    height: 80px;
+    cursor: pointer; /* Cambia il cursore quando passi sopra all'icona */
+    color: red; /* Colore rosso per il cuore */
+    font-size: 1.5rem; /* Dimensione del cuore */
+    vertical-align: middle; /* Allinea verticalmente il testo al centro rispetto all'icona */
+    margin-left: 0.5rem; /* Aggiunge un margine sinistro per separare l'icona dal conteggio */
+}
+
+/* Stile della descrizione */
+.descrizione {
+    font-size: 1rem; /* Dimensione del testo della descrizione */
+    line-height: 1.5; /* Altezza della riga per una migliore leggibilità */
+    color: #555; /* Colore del testo leggermente più scuro */
+}
+
+.account-link {
+    position: absolute;
+    top: 10px; /* Posizione iniziale dall'alto */
+    right: 25px; /* Posizione a destra */
+    width: 30px; /* Larghezza desiderata */
+    height: 11px; /* Altezza automatica */
+}
+
+.salvati-link {
+    position: absolute;
+    top: 12px; /* Posizione iniziale dall'alto */
+    right: 75px; /* Posizione a destra */
+    width: 24px; /* Larghezza desiderata */
+    height: 9px; /* Altezza automatica */
+}
+
+.aggiungi-link {
+    position: absolute;
+    top: 13.5px; /* Posizione iniziale dall'alto */
+    right: 123.5px; /* Posizione a destra */
+    width: 24px; /* Larghezza desiderata */
+    height: 9px; /* Altezza automatica */
+}

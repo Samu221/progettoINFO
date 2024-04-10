@@ -1,37 +1,23 @@
-/* Stile */
-
-.project_container{
-    padding: 1rem;
-    border: 1px solid black;
-    min-height: 300px;
-}
-.container{
-    box-sizing: border-box;
-}
-.info{
-    
-}
-.img{
-    padding-right: 1rem;
-    height: 300px;
-    float: left;
-}
-.titolo{
-    text-align: center;
-}
-.immagine{
-    height: 100%;
-    width: auto;
-    max-width: 100%;
+.account-link {
+    position: absolute;
+    top: 10px; /* Posizione iniziale dall'alto */
+    right: 25px; /* Posizione a destra */
+    width: 30px; /* Larghezza desiderata */
+    height: 11px; /* Altezza automatica */
 }
 
-.ambito{
-    float: left;
-    height: 80px;
+.salvati-link {
+    position: absolute;
+    top: 12px; /* Posizione iniziale dall'alto */
+    right: 75px; /* Posizione a destra */
+    width: 24px; /* Larghezza desiderata */
+    height: 9px; /* Altezza automatica */
 }
-.likes{ 
-    text-align: right;
-    height: 80px;
-}
-.descrizione{    
+
+.aggiungi-link {
+    position: absolute;
+    top: 13.5px; /* Posizione iniziale dall'alto */
+    right: 123.5px; /* Posizione a destra */
+    width: 24px; /* Larghezza desiderata */
+    height: 9px; /* Altezza automatica */
 }

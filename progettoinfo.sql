@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 07, 2024 alle 18:17
+-- Creato il: Apr 10, 2024 alle 18:46
 -- Versione del server: 10.4.28-MariaDB
 -- Versione PHP: 8.2.4
 
@@ -38,7 +38,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`username`, `email`, `password`) VALUES
-('samu', 'gig@gmail.com', '237c1c905d56046f024a112bcbed1d0e7979d21b');
+('samu', 'samuele@gmail.com', '237c1c905d56046f024a112bcbed1d0e7979d21b');
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ INSERT INTO `immagine` (`numero`, `immagine`, `codice_progetto`) VALUES
 CREATE TABLE `progetto` (
   `codice` int(11) NOT NULL,
   `titolo` varchar(50) DEFAULT NULL,
-  `ambito` enum('Informatica','Meccanica','Robotica','Falegnameria') NOT NULL,
+  `ambito` varchar(40) NOT NULL,
   `descrizione` varchar(300) DEFAULT NULL,
   `procedimento` varchar(1000) DEFAULT NULL,
   `num_like` int(11) DEFAULT NULL,
@@ -92,11 +92,7 @@ CREATE TABLE `progetto` (
 --
 
 INSERT INTO `progetto` (`codice`, `titolo`, `ambito`, `descrizione`, `procedimento`, `num_like`, `username_creatore`) VALUES
-(1, 'progetto pacman', 'Informatica', 'ho realizzato pacman in c++  funzioante con la programmazione ad oggetti', 'fase 1\r\nfase 2', 324, 'samu'),
-(4, 'prova2', 'Meccanica', 'This is a new project.', 'This is the project procedure.', 0, 'samu'),
-(10, 'prova3', 'Robotica', 'questa è inserita col form', 'devo cambiare lunghezza dove si sinerisce', 0, 'samu'),
-(11, '', '', '', '', 0, 'samu'),
-(12, '', '', '', '', 0, 'samu');
+(1, 'progetto pacman', 'Informatica', 'ho realizzato pacman in c++  funzioante con la programmazione ad oggetti', 'fase 1\r\nfase 2', 324, 'samu');
 
 -- --------------------------------------------------------
 
@@ -155,13 +151,13 @@ ALTER TABLE `salvato`
 -- AUTO_INCREMENT per la tabella `immagine`
 --
 ALTER TABLE `immagine`
-  MODIFY `numero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `numero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT per la tabella `progetto`
 --
 ALTER TABLE `progetto`
-  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Limiti per le tabelle scaricate

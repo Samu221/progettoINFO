@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="progetto.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuovo Progetto</title>
 </head>
 <body>
+  <header class="header">
+    <header style="top: 0; width: 100%; border-bottom: 1px solid black;">
+        <h1>Nuovo Progetto</h1>
+        <a href="account.php" class="account-link">
+            <img src="immagini/account.png" alt="Icona Account" style="width: 40px;">
+        </a>
+        <a href="/percorso-del-tuo-account" class="salvati-link">
+            <img src="immagini/salvati.png" alt="Icona Salvati" style="width: 35px;">
+        </a>
+        <a href="inserimento.html" class="aggiungi-link">
+            <img src="immagini/aggiungi.png" alt="Icona Aggiungi" style="width: 34px;">
+        </a>
+    </header>
   <div id="progettoForm">
-    <h2>Nuovo Progetto</h2>
     <form action="inserimento.php" method="post">
         <legend>titolo:</legend>
         <input type="text" id="titolo" name="titolo" placeholder="Inserisci il titolo del tuo progetto" required>
@@ -16,12 +29,23 @@
         <option selected="selected">Informatica </option>
         <option>Meccanica </option>
         <option>Robotica </option>
+        <option>Elettronica </option>
+        <option>Falegnameria </option>
+        <option>Decorazioni per la casa </option>
+        <option>Giardinaggio </option>
+        <option>Altro </option>
         </select>
         <legend>descrizione:</legend>
-        <input type="text" id="descrizione" name="descrizione" placeholder="Inserisci una breve descrizone (300 caratteri)" required>
+        <textarea id="descrizione" name="descrizione" rows="4" cols="50" placeholder="Inserisci una descrizione" required></textarea> 
         <legend>procedimento:</legend>
-        <input type="text" id="procedimento" name="procedimento" placeholder="Inserisci il procedimento che hai svolto" required>
-        <input type="submit" value="Accedi">
+        <textarea id="procedimento" name="procedimento" rows="10" cols="50" placeholder="Inserisci il procedimento che hai svolto" required></textarea>
+        <legend>immagine di anteprima (obbligatoria):</legend>
+        <input type="file" accept="image/png, image/jpeg" id="immagine" name="immagine" required>
+        <legend>altre immagini (facoltative):</legend>
+        <input type="file" accept="image/png, image/jpeg" id="immagine2" name="immagine2" >
+        <input type="file" accept="image/png, image/jpeg" id="immagine3" name="immagine3" >
+        <input type="file" accept="image/png, image/jpeg" id="immagine4" name="immagine4" >
+        <br>  <br> <input type="submit" value="Conferma">
     </form>
   </div>
  
