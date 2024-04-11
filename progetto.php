@@ -8,8 +8,13 @@
     <title>Project Details</title>
 </head>
 <body>
-    <header style="top: 0; width: 100%; border-bottom: 1px solid black;">
-        <h1>Progetto</h1>
+    <header>
+        <div class="header-content">
+            <a href="home.php" class="link">
+                <img src="immagini/logo.png" alt="Logo" class="logo">
+            </a>
+            <h1 class="h1"> DIYhub </h1>
+        </div>
         <a href="account.php" class="account-link">
             <img src="immagini/account.png" alt="Icona Account" style="width: 40px;">
         </a>

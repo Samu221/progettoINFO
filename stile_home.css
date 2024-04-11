@@ -1,12 +1,35 @@
+
+/* Stile dell'immagine */
+.img {
+    text-align: center;
+    object-fit: cover; /* Adatta l'immagine al contenitore senza distorcerla */
+    border-radius: 8px 8px 0 0; /* Bordo arrotondato solo sopra */
+}
 /* Stile generale */
 
+/* Stile dell'immagine all'interno dell'elemento .img */
+.immagine {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px; /* Bordo arrotondato per l'immagine */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Stile generale */
 .project_container {
-    padding: 1.5rem; /* Maggiore spazio intorno al contenitore */
-    border: 1px solid #333; /* Bordo sottile scuro */
-    min-height: 300px;
+    margin: 0.9rem; /* Margine intorno al contenitore */
+    border: 1px solid transparent; /* Rimuovi il bordo nero e trasparente */
     overflow: hidden; /* Gestione del float */
     background-color: #f9f9f9; /* Sfondo leggermente grigio */
     border-radius: 8px; /* Bordo arrotondato */
+    font-family: Verdana, sans-serif; /* Applica il font Verdana */
+    display: inline-block; /* Mostra i contenitori come blocchi inline */
+    width: calc(500px - 2rem); /* Larghezza dei contenitori (1/3 della larghezza della finestra) */
+    vertical-align: top; /* Allineamento verticale in alto */
+    float: left; /* Metti i contenitori in una riga */
+    margin-bottom: 0;
+    min-height: 700px;
+    
 }
 
 .container {
@@ -15,55 +38,51 @@
 
 /* Stile delle informazioni */
 .info {
-    margin-top: 1.5rem; /* Margine sopra le informazioni */
+    padding: 0.5rem; /* Spaziatura interna per le informazioni */
+    max-height: 500px;
 }
 
-/* Stile dell'immagine */
-.img {
-    padding-right: 1.5rem; /* Maggiore spazio tra l'immagine e il contenuto adiacente */
-    height: 300px;
-    float: left;
-}
 /* Stile del titolo */
 .titolo {
     text-align: center;
-    font-size: 1.5rem; /* Dimensione del testo del titolo */
-    margin-bottom: 1rem; /* Margine inferiore */
-}
-
-/* Stile dell'immagine all'interno dell'elemento .img */
-.immagine {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    border-radius: 8px; /* Bordo arrotondato per l'immagine */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    font-size: 1.1rem; /* Dimensione del testo del titolo */
+    margin-bottom: 0.3rem; /* Margine inferiore */
 }
 
 /* Stile dell'ambito */
 .ambito {
-    float: left;
-    height: 80px;
+    margin-bottom: 0.3rem; /* Margine inferiore */
 }
 
 /* Stile dei like */
-.like {
-    align-items: right;
-    height: 80px;
+.likes {
+    border: 1px solid black;
+    width: 60px;
+    height: 20px;
+    float: right;
+}
+
+.like-icon {
     cursor: pointer; /* Cambia il cursore quando passi sopra all'icona */
     color: red; /* Colore rosso per il cuore */
-    font-size: 1.5rem; /* Dimensione del cuore */
-    vertical-align: middle; /* Allinea verticalmente il testo al centro rispetto all'icona */
-    margin-left: 0.5rem; /* Aggiunge un margine sinistro per separare l'icona dal conteggio */
+    font-size: 1rem; /* Dimensione del cuore */
+    transition: color 0.3s; /* Aggiungi una transizione per il cambio di colore */
+}
+
+.like-icon:hover {
+    color: darkred; /* Cambia il colore del cuore quando passi sopra */
 }
 
 /* Stile della descrizione */
 .descrizione {
-    font-size: 1rem; /* Dimensione del testo della descrizione */
-    line-height: 1.5; /* Altezza della riga per una migliore leggibilità */
+    font-size: 0.9rem; /* Dimensione del testo della descrizione */
+    line-height: 1.3; /* Altezza della riga per una migliore leggibilità */
     color: #555; /* Colore del testo leggermente più scuro */
+    font-family: Verdana, sans-serif; /* Applica il font Verdana */
 }
 
+
+/* header */
 .account-link {
     position: absolute;
     top: 10px; /* Posizione iniziale dall'alto */
@@ -86,4 +105,42 @@
     right: 123.5px; /* Posizione a destra */
     width: 24px; /* Larghezza desiderata */
     height: 9px; /* Altezza automatica */
+}
+
+
+header{
+    height: 115px;
+    width: 100%;
+}
+
+/* Stile del contenitore dell'header */
+.header-content {
+    float: left;
+    display: flex; /* Utilizza un layout flessibile */
+    justify-content: center; /* Centra gli elementi orizzontalmente */
+    margin-bottom: 20px; /* Aggiungi margine inferiore per separare dal resto del contenuto */
+    padding-top: 6px;
+}
+
+
+.logo {
+    width: 50px; /* Larghezza desiderata per il logo */
+    height: 50px; /* Altezza desiderata per il logo */
+    border-radius: 50%; /* Bordo arrotondato per rendere il logo tondo */
+    object-fit: cover; /* Adatta l'immagine al contenitore senza distorcerla */
+    margin-right: 10px; /* Spaziatura a destra */
+    margin-left: 10px;
+}
+
+.link{
+    text-align: left;
+}
+
+.h1 {
+    margin-top: 3px;
+    text-align: left;
+    font-size: 35px; /* Dimensione del testo */
+    color: #525252; /* Colore del testo */
+    margin-right: 20px; /* Spaziatura a destra */
+    font-family: 'Pacifico', cursive; /* Utilizza il font Pacifico */
 }
