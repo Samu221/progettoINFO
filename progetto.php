@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="progetto.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>Project Details</title>
 </head>
 <body>
@@ -25,6 +26,8 @@
             <img src="immagini/aggiungi.png" alt="Icona Aggiungi" style="width: 34px;">
         </a>
     </header>
+
+    <div class = descrizione>
 <?php
 // Connect to the database
 $conn = new mysqli("localhost", "root", "", "progettoinfo");
@@ -49,10 +52,11 @@ WHERE progetto.codice = immagine.codice_progetto AND immagine.codice_progetto=$p
 $result = mysqli_query($conn, $sql);
 $result_img = mysqli_query($conn, $sql_img);
 
+
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<h2 class='titolo'>" . $row["titolo"] . "</h2>";
         echo "<div class='project_container'>";
+        echo "<h2 class='titolo' style='text-align:center; font-size:30px'>" . $row["titolo"] . "</h2>";
         echo "  <div class='container info'>";
         echo "      <div class='container ambito'>";
         echo "          <p>Creato da: " . $row["username_creatore"] . "</p>";
@@ -62,14 +66,14 @@ if (mysqli_num_rows($result) > 0) {
         echo "          <img class='like-icon' src='heart_gray.png' onclick='like(this)' alt='Like'>";
         echo "          <span class='like-count'>" . $row["num_like"] . "</span>";
         echo "      </div>";
-        echo "      <div class='container descrizione'>";
+        echo "      <br><br><br><br><div class='container descrizione'>";
         echo "          <p>Descrizione: " . $row["descrizione"] . "</p>";
         echo "      </div>";
         echo "      <div class='container procedimento'>";
         echo "          <p>Procedimento: " . $row["procedimento"] . "</p>";
         echo "      </div>";
         echo "  </div>";
-        echo "</div>";
+        echo "  <div class='container image'>";
     }
 }
 else{
@@ -78,18 +82,37 @@ else{
 
 if (mysqli_num_rows($result_img) > 0) {
     while($row = mysqli_fetch_assoc($result_img)) {
-        echo "<img class='immagine' src='data:image/jpeg;base64," . base64_encode($row["immagine"]) . "' alt='Immagine del progetto'>";
+        echo "<img class='mySlides' src='data:image/jpeg;base64," . base64_encode($row["immagine"]) . "' alt='Immagine del progetto'>";
 
     }
 }
 else{
     echo "immagini non trovate";
 }
+echo "</div>";
+echo "</div>";
 
 // Close the database connection
 mysqli_close($conn);
 ?>
 
-
+</div>
 </body>
+<script>
+    // Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="progetto.css">
+    <link rel="stylesheet" href="stileaccount.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestione Account</title>
@@ -90,6 +90,7 @@
             $result_img = mysqli_query($conn, $sql_img);
     
             if (mysqli_num_rows($result_img) > 0) {
+                echo "<p>Immagini:</p>";
                 echo "<div class='container images'>";
                 while($row_img = mysqli_fetch_assoc($result_img)) {
                     // output the project image
@@ -104,13 +105,11 @@
             else{
                 echo "progetto non trovato";
             }
-            
-            // close the prepared statement
-            mysqli_stmt_close($stmt_img);
-            
+                        
             // close the database connection
             mysqli_close($conn);
         ?>
+        <br>
     </div>
 </body>
 </html>

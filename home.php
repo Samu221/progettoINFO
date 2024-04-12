@@ -16,6 +16,9 @@
                 <img src="immagini/logo.png" alt="Logo" class="logo">
             </a>
             <h1 class="h1"> DIYhub </h1>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Cerca">
+            </div>
         </div>
         <a href="account.php" class="account-link">
             <img src="immagini/account.png" alt="Icona Account" style="width: 40px;">
