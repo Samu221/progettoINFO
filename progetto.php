@@ -55,25 +55,26 @@ $result_img = mysqli_query($conn, $sql_img);
 
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<div class='project_container'>";
         echo "<h2 class='titolo' style='text-align:center; font-size:30px'>" . $row["titolo"] . "</h2>";
-        echo "  <div class='container info'>";
+        echo "<table class='tabella'><tr>";
+        echo "  <th class='container info'>";
         echo "      <div class='container ambito'>";
         echo "          <p>Creato da: " . $row["username_creatore"] . "</p>";
         echo "          <p>Ambito: " . $row["ambito"] . "</p>";
         echo "      </div>";
-        echo "<div class='container likes'>";
-        echo "    <button class='like-button' onclick='like(this)'>&#10084;</button>";
-        echo "    <span class='like-count'>" . $row["num_like"] . "</span>";
-        echo "</div>";
-        echo "      <br><br><br><br><div class='container descrizione'>";
+        echo "      <div class='container likes'>";
+        echo "          <button class='like-button' onclick='like(this)'>&#10084;</button>";
+        echo "          <span class='like-count'>" . $row["num_like"] . "</span>";
+        echo "      </div>";
+        echo "      <br><br><br><br>";
+        echo "      <div class='container descrizione'>";
         echo "          <p>Descrizione: " . $row["descrizione"] . "</p>";
         echo "      </div>";
         echo "      <div class='container procedimento'>";
         echo "          <p>Procedimento: " . $row["procedimento"] . "</p>";
         echo "      </div>";
-        echo "  </div>";
-        echo "  <div class='container image'>";
+        echo "  </th>";
+        echo "  <th class='container image'>";
     }
 }
 else{
@@ -89,8 +90,8 @@ if (mysqli_num_rows($result_img) > 0) {
 else{
     echo "immagini non trovate";
 }
-echo "</div>";
-echo "</div>";
+echo "</th>";
+echo "</tr></table>";
 
 // Close the database connection
 mysqli_close($conn);

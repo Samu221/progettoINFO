@@ -34,15 +34,13 @@ body {
     font-family: Verdana, sans-serif; /* Applica il font Verdana */
     display: inline-block; /* Mostra i contenitori come blocchi inline */
     vertical-align: top; /* Allineamento verticale in alto */
-    min-height: 700px;
+    height: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: none;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: calc(33% - 40px); /* Larghezza per tre elementi per riga, con compensazione per il gap */
-	padding-left: 1rem;
-    padding-bottom: 1rem;
 }
 
 /* Stile dei dettagli del progetto e delle informazioni */
@@ -217,10 +215,10 @@ header{
     color: #333333;
     cursor: pointer;
     display: block; /* Rendi il bottone un blocco per centrarlo facilmente */
-    margin: 0 auto; /* Centra il bottone */
-    margin-top: 1rem; /* Spaziatura superiore */
+    margin: 0; /* Centra il bottone */
     padding: 0.5rem 1rem; /* Spaziatura interna */
     text-align: center; /* Allineamento del testo al centro */
+    height: 100%;
 }
 
 .bottone:hover {
