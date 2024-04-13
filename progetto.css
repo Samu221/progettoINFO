@@ -25,6 +25,8 @@ body {
     border-radius: 20px;
     padding: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra sottile */
+    float: left;
+    display: block;
 }
 .likes{
     float: right;
@@ -33,8 +35,8 @@ body {
     float: left;
 }
 .image{
-    width: 100%;
-}
+    width: 40%;
+    float: right;}
 .immagine{
     height: 140px;
 }
@@ -143,9 +145,9 @@ header {
         margin: 10px 0;
     }
 
-    .img, .info {
+    .image, .info {
         display: block; /* Stack image and info */
-        max-width: 100%;
+        width: 100%;
         max-height: unset;
     }
 }

@@ -56,14 +56,13 @@ $result_img = mysqli_query($conn, $sql_img);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "<h2 class='titolo' style='text-align:center; font-size:30px'>" . $row["titolo"] . "</h2>";
-        echo "<table class='tabella'><tr>";
-        echo "  <th class='container info'>";
+        echo "  <div class='container info'>";
         echo "      <div class='container ambito'>";
         echo "          <p>Creato da: " . $row["username_creatore"] . "</p>";
         echo "          <p>Ambito: " . $row["ambito"] . "</p>";
         echo "      </div>";
         echo "      <div class='container likes'>";
-        echo "          <button class='like-button' onclick='like(this)'>&#10084;</button>";
+        echo "          <button class='like-button' id='myButton_".$project_code."' data-codice='".$project_code."'>&#10084;</button>";
         echo "          <span class='like-count'>" . $row["num_like"] . "</span>";
         echo "      </div>";
         echo "      <br><br><br><br>";
@@ -73,8 +72,8 @@ if (mysqli_num_rows($result) > 0) {
         echo "      <div class='container procedimento'>";
         echo "          <p>Procedimento: " . $row["procedimento"] . "</p>";
         echo "      </div>";
-        echo "  </th>";
-        echo "  <th class='container image'>";
+        echo "  </div>";
+        echo "  <div class='container image'>";
     }
 }
 else{
@@ -90,16 +89,25 @@ if (mysqli_num_rows($result_img) > 0) {
 else{
     echo "immagini non trovate";
 }
-echo "</th>";
-echo "</tr></table>";
+echo "</div>";
 
 // Close the database connection
 mysqli_close($conn);
 ?>
 
 </div>
-</body>
+</body><!-- Script JavaScript -->
 <script>
+    // Script per i like
+    const buttons = document.querySelectorAll('button[id^="myButton_"]');
+
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const codice = this.dataset.codice; // Get the project code
+            const url = "like.php?codice=" + codice; // Create the URL with the project code
+            window.location.href = url; // Redirect to the URL
+        });
+    });
     // Automatic Slideshow - change image every 3 seconds
 var myIndex = 0;
 carousel();
