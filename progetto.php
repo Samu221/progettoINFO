@@ -62,10 +62,10 @@ if (mysqli_num_rows($result) > 0) {
         echo "          <p>Creato da: " . $row["username_creatore"] . "</p>";
         echo "          <p>Ambito: " . $row["ambito"] . "</p>";
         echo "      </div>";
-        echo "      <div class='container likes'>";
-        echo "          <img class='like-icon' src='heart_gray.png' onclick='like(this)' alt='Like'>";
-        echo "          <span class='like-count'>" . $row["num_like"] . "</span>";
-        echo "      </div>";
+        echo "<div class='container likes'>";
+        echo "    <button class='like-button' onclick='like(this)'>&#10084;</button>";
+        echo "    <span class='like-count'>" . $row["num_like"] . "</span>";
+        echo "</div>";
         echo "      <br><br><br><br><div class='container descrizione'>";
         echo "          <p>Descrizione: " . $row["descrizione"] . "</p>";
         echo "      </div>";

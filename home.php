@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -55,20 +54,21 @@
     if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
             echo "<div class='project_container'>";
-            echo "  <div class='container img'>";
-            echo "      <img class='immagine' src='data:image/jpeg;base64," . base64_encode($row["immagine"]) . "' alt='Immagine del progetto'>";
-            echo "  </div>";
-            echo "  <div class='container info'>";
-            echo "      <h2 class='titolo'>" . $row["titolo"] . "</h2>";
-            echo "      <div class='container ambito'>";
-            echo "          <p>Creato da: " . $row["username_creatore"] . "</p>";
-            echo "          <p>Ambito: " . $row["ambito"] . "</p>";
+            echo "  <button class='bottone' id='myButton_".$row["CODICE"]."' data-codice='".$row["CODICE"]."'>";
+            echo "      <div class='container img'>";
+            echo "          <img class='immagine' src='data:image/jpeg;base64," . base64_encode($row["immagine"]) . "' alt='Immagine del progetto'>";
             echo "      </div>";
-            echo "      <div class='container descrizione'>";
-            echo "          <p>Descrizione: " . $row["descrizione"] . "</p>";
+            echo "      <div class='container info'>";
+            echo "          <h2 class='titolo'>" . $row["titolo"] . "</h2>";
+            echo "          <div class='container ambito'>";
+            echo "              <p>Creato da: " . $row["username_creatore"] . "</p>";
+            echo "              <p>Ambito: " . $row["ambito"] . "</p>";
+            echo "          </div>";
+            echo "          <div class='container descrizione'>";
+            echo "              <p>Descrizione: " . $row["descrizione"] . "</p>";
+            echo "          </div>";
             echo "      </div>";
-            echo "      <button id='myButton_".$row["CODICE"]."' data-codice='".$row["CODICE"]."'>Mostra altro</button>";
-            echo "  </div>";
+            echo "  </button>";
             echo "</div>";
         }
     } else {
@@ -78,18 +78,17 @@
     // Close the database connection
     mysqli_close($conn);
     ?>
-    <!-- DA VEDERE IN PHP -->
+    <!-- Script JavaScript -->
     <script>
-        
-        //bottone mostra altro
+        // Script per il pulsante "Mostra altro"
         const buttons = document.querySelectorAll('button[id^="myButton_"]');
 
         buttons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const codice = this.dataset.codice; // Get the project code
-            const url = "progetto.php?codice=" + codice; // Create the URL with the project code
-            window.location.href = url; // Redirect to the URL
-        });
+            button.addEventListener("click", function() {
+                const codice = this.dataset.codice; // Get the project code
+                const url = "progetto.php?codice=" + codice; // Create the URL with the project code
+                window.location.href = url; // Redirect to the URL
+            });
         });
     </script>
 </body>

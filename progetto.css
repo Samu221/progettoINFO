@@ -1,23 +1,25 @@
 body {
-    font-family: 'Verdana', sans-serif; /* Font moderno e leggibile */
+    font-family: 'Verdana', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Sfondo più chiaro per un aspetto fresco e pulito */
-    color: #333; /* Colore del testo scuro per contrasto */
+    background-color: #f9f9f9;
+    color: #333;
 }
-.project_container{
-    border: 1px solid black;
+
+.project_container {
     border-radius: 20px;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra sottile */
+    border: none;
 }
+
 .mySlides{
     height: 300px;
     margin-left: auto;
 }
 .container{
     
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 .likes{
     float: right;
@@ -160,4 +162,17 @@ header {
     .info {
         padding: 10px;
     }
+}
+
+.like-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 17px;
+    color: #000000; /* colore del cuore */
+    transition: color 0.3s;
+}
+
+.like-button:hover {
+    color: #ff69b4; /* colore del cuore al passaggio del mouse */
 }
