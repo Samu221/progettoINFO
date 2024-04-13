@@ -1,4 +1,8 @@
-
+body {
+    font-family: 'Verdana', sans-serif; /* Font moderno e leggibile */
+    margin: 0;
+    padding: 0;
+}
 /* Stile dell'immagine */
 .img {
     text-align: center;
@@ -7,6 +11,7 @@
 }
 
 /* Stile generale */
+
 
 /* Stile dell'immagine all'interno dell'elemento .img */
 .immagine {
@@ -17,8 +22,8 @@
 }
 
 /* Stile generale */
-.project_container {
-    margin: 20px ; /* Aggiungi margine laterale automatico per centrare il contenitore */
+.project_container {    
+	margin: 15px ; /* Aggiungi margine laterale automatico per centrare il contenitore */
     margin-top: 1rem; /* Mantieni il margine superiore */
     border: 1px solid transparent; /* Rimuovi il bordo nero e trasparente */
     overflow: hidden; /* Gestione del float */
@@ -35,13 +40,15 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: calc(33% - 40px); /* Larghezza per tre elementi per riga, con compensazione per il gap */
+	padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* Stile dei dettagli del progetto e delle informazioni */
 .info {
     padding: 1.5rem;
     max-height: 500px;
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -62,6 +69,7 @@
     margin-bottom: 0.5rem;
     color: #333; /* Testo più scuro per miglior contrasto */
     font-weight: bold; /* Testo in grassetto */
+	text-align:center;
 }
 
 /* Stile dell'ambito */
@@ -105,29 +113,30 @@
     top: 10px; /* Posizione iniziale dall'alto */
     right: 25px; /* Posizione a destra */
     width: 30px; /* Larghezza desiderata */
-    height: 11px; /* Altezza automatica */
+    height: auto; /* Altezza automatica */
 }
 
 .salvati-link {
     position: absolute;
-    top: 12px; /* Posizione iniziale dall'alto */
+    top: 10px; /* Posizione iniziale dall'alto */
     right: 75px; /* Posizione a destra */
-    width: 24px; /* Larghezza desiderata */
-    height: 9px; /* Altezza automatica */
+    width: 30px; /* Larghezza desiderata */
+    height: auto; /* Altezza automatica */
 }
 
 .aggiungi-link {
     position: absolute;
-    top: 13.5px; /* Posizione iniziale dall'alto */
-    right: 123.5px; /* Posizione a destra */
-    width: 24px; /* Larghezza desiderata */
-    height: 9px; /* Altezza automatica */
+    top: 10px; /* Posizione iniziale dall'alto */
+    right: 126px; /* Posizione a destra */
+    width: 30px; /* Larghezza desiderata */
+    height: auto; /* Altezza automatica */
 }
 
 
 header{
-    height: 115px;
+    height: 100px; /* Altezza ridotta per un aspetto più snello */
     width: 100%;
+    background-color: #ffffff;
 }
 
 /* Stile del contenitore dell'header */
@@ -135,7 +144,6 @@ header{
     float: left;
     display: flex; /* Utilizza un layout flessibile */
     justify-content: center; /* Centra gli elementi orizzontalmente */
-    margin-bottom: 20px; /* Aggiungi margine inferiore per separare dal resto del contenuto */
     padding-top: 6px;
 }
 
@@ -162,96 +170,23 @@ header{
     font-family: 'Pacifico', cursive; /* Utilizza il font Pacifico */
 }
 
-/* Stile della barra di ricerca */
-.search-bar {
-    margin: 20px auto; /* Margine sopra e sotto, allineamento al centro */
-    margin-left: 3rem; /* Sposta leggermente la barra di ricerca a sinistra */
-}
 
-/* Stile dell'input di ricerca */
-#search-input {
-    padding: 10px; /* Spaziatura interna */
-    width: 100%; /* Larghezza */
-    border: none; /* Rimuovi il bordo */
-    border-radius: 20px; /* Bordo arrotondato */
-    font-size: 16px; /* Dimensione del testo */
-    background-color: #efeeee; /* Colore di sfondo grigio */
-    color: #555; /* Colore del testo grigio scuro */
-    outline: none; /* Rimuovi l'outline del bordo */
-    box-sizing: border-box; /* Assicura che il padding non influenzi la larghezza */
-}
-
-/* Stile del pulsante di ricerca */
-#search-button {
-    padding: 10px 20px; /* Spaziatura interna */
-    border: none; /* Rimuovi il bordo */
-    border-radius: 20px; /* Bordo arrotondato */
-    background-color: #007bff; /* Colore di sfondo */
-    color: white; /* Colore del testo */
-    font-size: 16px; /* Dimensione del testo */
-    cursor: pointer; /* Cambia il cursore al passaggio sopra */
-    transition: background-color 0.3s; /* Transizione del colore di sfondo */
-}
-
-/* Stile del pulsante di ricerca al passaggio sopra */
-#search-button:hover {
-    background-color: #0056b3; /* Cambia il colore di sfondo al passaggio sopra */
-}
-
-/* Stile dell'input di ricerca */
-#search-input {
-    padding: 10px; /* Spaziatura interna */
-    width: 700px; /* Larghezza desiderata */
-    border: none; /* Rimuovi il bordo */
-    border-radius: 20px; /* Bordo arrotondato */
-    font-size: 16px; /* Dimensione del testo */
-    background-color: #efeeee; /* Colore di sfondo grigio */
-    color: #555; /* Colore del testo grigio scuro */
-    outline: none; /* Rimuovi l'outline del bordo */
-}
 
 /* Basic responsive adjustments */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .h1, .search-bar, .logo {
-        margin: 10px 0;
-    }
-
-    .search-bar {
-        margin: 0;
-        width: 90%;
-    }
-
-    #search-input {
-        width: 100%; /* Adjust width for smaller devices */
-    }
+    body{
+		align-content:center;
+	}
 
     .project_container {
         width: 100%; /* Full width on small devices */
-        margin: 10px 0;
+        margin: 0;
     }
 
     .img, .info {
         display: block; /* Stack image and info */
         max-width: 100%;
         max-height: unset;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .account-link, .salvati-link, .aggiungi-link {
-        position: static;
-        display: inline-block;
-        margin: 5px;
-        width: auto;
-        height: auto;
     }
 }
 

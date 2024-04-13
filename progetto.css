@@ -127,3 +127,37 @@ header {
     margin: 0; /* Rimuovi i margini predefiniti */
     padding: 0; /* Rimuovi i padding predefiniti */
 }
+/* Basic responsive adjustments */
+@media (max-width: 768px) {
+    
+
+    .project_container {
+        width: 100%; /* Full width on small devices */
+        margin: 10px 0;
+    }
+
+    .img, .info {
+        display: block; /* Stack image and info */
+        max-width: 100%;
+        max-height: unset;
+    }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+    .h1 {
+        font-size: 24px; /* Smaller font for very small screens */
+    }
+
+    .project_container {
+        padding: 0 5px;
+    }
+
+    .immagine {
+        max-height: 300px;
+    }
+
+    .info {
+        padding: 10px;
+    }
+}
